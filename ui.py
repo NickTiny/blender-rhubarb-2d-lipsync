@@ -10,7 +10,7 @@ class RHUBARB_PT_Main_Panel(bpy.types.Panel):
     bl_space_type = "VIEW_3D"
     bl_region_type = "UI"
     bl_category = "Rhubarb Lipsync"
-    bl_label = "Rhubarb Lipsync"
+    bl_label = "Rhubarb 2D Lipsync"
 
     # Pointer definitions
     bpy.types.Scene.obj_selection = bpy.props.PointerProperty(type=bpy.types.Object)
