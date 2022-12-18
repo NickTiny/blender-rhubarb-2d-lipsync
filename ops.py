@@ -1,23 +1,12 @@
-from distutils.util import execute
-import enum
 import bpy
-from bpy import types
-from bpy.props import IntProperty, FloatProperty
-import blf
-import bgl
-import io
-import sys
-import select
 import subprocess
-from threading import Thread, local
-from queue import Queue, Empty
 import json
 import os
 from .core import get_target, debugger
 
 
 class RHUBARB_OT_Execute_Rhubarb_Lipsync(bpy.types.Operator):
-    """Run Rhubarb lipsync"""
+    """Run Rhubarb 2D Lipsync"""
 
     bl_idname = "rhubarb.execute_rhubarb_lipsync"
     bl_label = "Rhubarb lipsync"

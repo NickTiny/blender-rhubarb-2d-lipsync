@@ -1,6 +1,6 @@
 import bpy
 
-from .core import refresh_target, initlize_props
+from .core import find_target_and_refresh_properties, initilize_mouth_values
 
 
 class RHUBARB_PT_Main_Panel(bpy.types.Panel):
@@ -24,7 +24,7 @@ class RHUBARB_PT_Main_Panel(bpy.types.Panel):
         mode_row = target_col.row(align=True)
         mode_row.prop(rhubarb, "obj_modes", text="Target Type", toggle=True)
 
-        obj = refresh_target(context)
+        obj = find_target_and_refresh_properties(context)
         if not obj:
             return
 
@@ -42,7 +42,7 @@ class RHUBARB_PT_Main_Panel(bpy.types.Panel):
             )
 
         # User editable Mouth Definitions
-        initlize_props(rhubarb)
+        initilize_mouth_values(rhubarb)
         prop_col = layout.column()
         prop_col.prop(rhubarb, "mouth_b", text="Mouth B (EE/etc)")
         prop_col.prop(rhubarb, "mouth_c", text="Mouth C (E)")
