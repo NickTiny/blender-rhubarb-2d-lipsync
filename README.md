@@ -12,6 +12,8 @@ https://github.com/NickTiny/blender-rhubarb-2d-lipsync/issues
 # Installation
 Download a release from https://github.com/NickTiny/blender-rhubarb-2d-lipsync/releases. If you download or clone the repository, the Rhubarb Lip Sync executable and data files will be missing - they can be downloaded separately from the Rhubarb Lip Sync repository, and set up as described below under Usage.
 
+
+
 Use version `4.0.0` with `Blender 3.0+`.
 
 Do not unzip the file.
@@ -65,6 +67,9 @@ Click the Rhubarb LipSync button and wait for the process to complete. The mouse
 
 # Troubleshooting
 This software is pre-release and provided without support. In the event of problems, you can use the system console (Window->Toggle System Console on Windows, or start Blender from a command line on Mac/Linux) to get more info on progress and error messages. When reporting an issue, please include any errors reported here.
+
+[Test-Assets.zip](https://github.com/NickTiny/blender-rhubarb-2d-lipsync/files/10374071/Test-Assets.zip)
+
 
 ------------------
 This is a fork of "Blender Rhubarb Lip Sync". Find [the original repo here](https://github.com/scaredyfish/blender-rhubarb-lipsync)
