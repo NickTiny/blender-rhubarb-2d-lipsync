@@ -1,6 +1,9 @@
 # Blender Rhubarb 2D Lipsync
 
-[Get the Latest Release Here](https://github.com/NickTiny/blender-rhubarb-2d-lipsync/releases/tag/4.0.0)
+[Get the Latest Release on Gumroad](https://tinynick.gumroad.com/l/uvsnj?layout=profile)
+
+[Get the Latest Release Directly Here](https://github.com/NickTiny/blender-rhubarb-2d-lipsync/releases/tag/4.0.0)
+
 
 [Rhubarb Lip Sync](https://github.com/DanielSWolf/rhubarb-lip-sync) is a command-line tool created by Daniel S. Wolf that automatically creates mouth animation from voice recordings. You can use it for characters in computer games, in animated cartoons, or in any other project that requires animating mouths based on existing recordings.
 
@@ -8,6 +11,10 @@ Blender Rhubarb Lipsync is an addon for Blender that integrates Rhubarb Lip Sync
 
 For support using this addon in Blender, please report an issue at 
 https://github.com/NickTiny/blender-rhubarb-2d-lipsync/issues
+
+# Video Tutorial
+
+[![Rhubarb 2D Blender Tutorial by Tiny_Nick](https://i9.ytimg.com/vi_webp/Anltf1_ufLQ/mqdefault.webp?v=63bdfe31&sqp=CLipgJ4G&rs=AOn4CLDh1Amryu112tMECvsZnqFURhQqVQ)](https://www.youtube.com/watch?v=Anltf1_ufLQ)
 
 # Installation
 Download a release from https://github.com/NickTiny/blender-rhubarb-2d-lipsync/releases. If you download or clone the repository, the Rhubarb Lip Sync executable and data files will be missing - they can be downloaded separately from the Rhubarb Lip Sync repository, and set up as described below under Usage.
