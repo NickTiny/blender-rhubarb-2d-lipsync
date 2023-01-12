@@ -12,9 +12,7 @@ Blender Rhubarb Lipsync is an addon for Blender that integrates Rhubarb Lip Sync
 For support using this addon in Blender, please report an issue at 
 https://github.com/NickTiny/blender-rhubarb-2d-lipsync/issues
 
-# Video Tutorial
-
-[![Rhubarb 2D Blender Tutorial by Tiny_Nick](https://i9.ytimg.com/vi_webp/Anltf1_ufLQ/mqdefault.webp?v=63bdfe31&sqp=CLipgJ4G&rs=AOn4CLDh1Amryu112tMECvsZnqFURhQqVQ)](https://www.youtube.com/watch?v=Anltf1_ufLQ)
+[Video Tutorial](https://www.youtube.com/embed/Anltf1_ufLQ "Rhubarb 2D Blender Tutorial by Tiny_Nick")
 
 # Installation
 Download a release from https://github.com/NickTiny/blender-rhubarb-2d-lipsync/releases. If you download or clone the repository, the Rhubarb Lip Sync executable and data files will be missing - they can be downloaded separately from the Rhubarb Lip Sync repository, and set up as described below under Usage.
@@ -75,6 +73,7 @@ Click the Rhubarb LipSync button and wait for the process to complete. The mouse
 # Troubleshooting
 This software is pre-release and provided without support. In the event of problems, you can use the system console (Window->Toggle System Console on Windows, or start Blender from a command line on Mac/Linux) to get more info on progress and error messages. When reporting an issue, please include any errors reported here.
 
+# Test Assets
 [Test-Assets.zip](https://github.com/NickTiny/blender-rhubarb-2d-lipsync/files/10374071/Test-Assets.zip)
 
 
