@@ -87,7 +87,7 @@ def initilize_mouth_values(rig_settings):
 
     for index, mouth in enumerate(mouth_shapes):
         if not rig_settings.get(mouth):
-            rig_settings[mouth] = index
+            rig_settings[mouth] = index + 1
 
 
 def debugger(msg):
