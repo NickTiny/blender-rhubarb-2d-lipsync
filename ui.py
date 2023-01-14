@@ -44,6 +44,7 @@ class RHUBARB_PT_Main_Panel(bpy.types.Panel):
         # User editable Mouth Definitions
         initilize_mouth_values(rhubarb)
         prop_col = layout.column()
+        prop_col.prop(rhubarb, "mouth_a", text="Mouth A (MBP)")
         prop_col.prop(rhubarb, "mouth_b", text="Mouth B (EE/etc)")
         prop_col.prop(rhubarb, "mouth_c", text="Mouth C (E)")
         prop_col.prop(rhubarb, "mouth_d", text="Mouth D (AI)")
