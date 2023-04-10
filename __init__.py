@@ -7,7 +7,7 @@ __version__ = "4.0.0"
 bl_info = {
     "name": "Blender Rhubarb 2D Lipsync",
     "author": "By Nick Alberelli, forked from Addon by Andrew Charlton, includes Rhubarb Lip Sync by Daniel S. Wolf",
-    "version": (4, 0, 1),
+    "version": (4, 0, 2),
     "blender": (3, 0, 0),
     "location": "VIEW3D > Sidebar > Rhubarb 2D Lipsync",
     "description": "Integrate Rhubarb Lipsync into Blender",
