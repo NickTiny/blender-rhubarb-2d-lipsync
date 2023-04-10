@@ -54,7 +54,9 @@ class RHUBARB_OT_Execute_Rhubarb_Lipsync(bpy.types.Operator):
         wm.progress_update(50)
         try:
             (stdout, stderr) = self.rhubarb.communicate(timeout=1)
-
+            if stderr is None and stdout == "":
+                self.report({"ERROR"}, f"Rhubarb failed to generate lipsync data. \nEnsure that your file is encoded correctly.")
+                return {"CANCELLED"}
             try:
                 result = json.loads(stderr)
                 if result["type"] == "progress":
