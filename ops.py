@@ -54,7 +54,9 @@ class RHUBARB_OT_Execute_Rhubarb_Lipsync(bpy.types.Operator):
         wm.progress_update(50)
         try:
             (stdout, stderr) = self.rhubarb.communicate(timeout=1)
-
+            if stderr is None and stdout == "":
+                self.report({"ERROR"}, f"Rhubarb failed to generate lipsync data. \nEnsure that your file is encoded correctly.")
+                return {"CANCELLED"}
             try:
                 result = json.loads(stderr)
                 if result["type"] == "progress":
@@ -163,8 +165,10 @@ class RHUBARB_OT_Execute_Rhubarb_Lipsync(bpy.types.Operator):
         except FileNotFoundError:
             self.report(
                 {"ERROR"},
-                f"CHECK EXECUTABLE PATH IN ADDON PREFERENCES. \n Rhubarb Executable not found at {executable}.",
+                f"Executable path is invalid, check addon preferences. \nRhubarb Executable not found at following path. \n{executable}.",
             )
+            return {"CANCELLED"}
+            
 
         # Lines that need to be excuted before the modal operator can go below this comment.
 
