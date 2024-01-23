@@ -1,3 +1,16 @@
+mkdir dist
+
+
+mkdir dist/linux
+mkdir dist/windows
+mkdir dist/osx
+
+
+mkdir dist/linux/blender-rhubarb-lipsync
+mkdir dist/windows/blender-rhubarb-lipsync
+mkdir dist/osx/blender-rhubarb-lipsync
+
+
 cp *.py dist/linux/blender-rhubarb-lipsync
 cp *.py dist/windows/blender-rhubarb-lipsync
 cp *.py dist/osx/blender-rhubarb-lipsync
