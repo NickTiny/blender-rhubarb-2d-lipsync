@@ -126,7 +126,10 @@ class RHUBARB_OT_Execute_Rhubarb_Lipsync(bpy.types.Operator):
         except json.decoder.JSONDecodeError:
             debugger(stdout)
             wm.progress_end()
-            self.report({"ERROR"}, "Error!!! Json Decoder")
+            self.report(
+                {"ERROR"},
+                "Error!!! Json Decoder. Try re-encoding your audio file into .wav",
+            )
             return {"CANCELLED"}
         except Exception as ex:
             template = "An exception of type {0} occurred. Arguments:\n{1!r}"
