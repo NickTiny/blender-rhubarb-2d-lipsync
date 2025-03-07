@@ -24,7 +24,7 @@ def get_target(context):
     if rhubarb.obj_modes == "bone" and obj.type == "ARMATURE":
         return obj.pose.bones.get(sc.bone_selection), obj
     if rhubarb.obj_modes == "timeoffset":
-        target = obj.grease_pencil_modifiers
+        target = obj.modifiers
         return target, obj
     else:
         target = context.object
