@@ -2,7 +2,6 @@ import bpy
 from bpy.types import AddonPreferences
 from bpy.props import StringProperty
 from bpy.props import EnumProperty
-from platform import system
 
 
 class RhubarbAddonPreferences(AddonPreferences):
@@ -11,9 +10,8 @@ class RhubarbAddonPreferences(AddonPreferences):
     executable_path: StringProperty(
         name="Rhubarb lipsync executable",
         subtype="FILE_PATH",
-        default=bpy.utils.user_resource("SCRIPTS")
-        + "\\addons\\blender-rhubarb-lipsync\\bin\\rhubarb"
-        + (".exe" if system() == "Windows" else ""),
+        default="",
+        description="Path to the Rhubarb lipsync executable, to use built in executable leave empty.",
     )
 
     recognizer: EnumProperty(

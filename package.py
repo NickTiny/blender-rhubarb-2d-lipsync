@@ -107,13 +107,13 @@ def unzip_rhubarb_zips(bin_folder="bin"):
 
 
 def get_version():
-    """Extract version from __init__.py"""
-    with open("__init__.py", "r") as f:
-        content = f.read()
-        match = re.search(r'__version__ = ["\']([0-9\.]+)["\']', content)
-        if match:
-            return match.group(1)
-    raise ValueError("Could not find version in __init__.py")
+    """Extract version from pyproject.toml (line: version = "x.y.z")"""
+    with open("blender_manifest.toml", "r") as f:
+        for line in f:
+            match = re.match(r'version\s*=\s*["\']([\d\.]+)["\']', line)
+            if match:
+                return match.group(1)
+    raise ValueError("Could not find version in blender_manifest.toml")
 
 
 def create_distribution_packages():
@@ -148,6 +148,14 @@ def create_distribution_packages():
             shutil.copy2(py_file, windows_addon)
             shutil.copy2(py_file, osx_addon)
             print(f"Copied {py_file} to all addon folders")
+
+    # Copy blender_manifest.toml to each addon folder
+    manifest_file = "blender_manifest.toml"
+    if os.path.exists(manifest_file):
+        shutil.copy2(manifest_file, linux_addon)
+        shutil.copy2(manifest_file, windows_addon)
+        shutil.copy2(manifest_file, osx_addon)
+        print(f"Copied {manifest_file} to all addon folders")
 
     # Copy OS-specific bin folders
     bin_folder = "bin"

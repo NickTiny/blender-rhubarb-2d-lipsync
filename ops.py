@@ -2,6 +2,8 @@ import bpy
 import subprocess
 import json
 import os
+from pathlib import Path
+from platform import system
 from .core import get_target, debugger
 
 
@@ -162,6 +164,14 @@ class RHUBARB_OT_Execute_Rhubarb_Lipsync(bpy.types.Operator):
         )
         recognizer = bpy.path.abspath(addon_prefs.recognizer)
         executable = bpy.path.abspath(addon_prefs.executable_path)
+
+        if executable.strip() == "":
+            # If the executable is set to none then find the shipped executable
+            # Developer note! This path really only works when traditionally installed
+            executable = Path(__file__).parent.joinpath("bin/rhubarb").as_posix() + (
+                ".exe" if system() == "Windows" else ""
+            )
+
         # This is ugly, but Blender unpacks the zip without execute permission
         try:
             os.chmod(executable, 0o744)
@@ -171,7 +181,6 @@ class RHUBARB_OT_Execute_Rhubarb_Lipsync(bpy.types.Operator):
                 f"Executable path is invalid, check addon preferences. \nRhubarb Executable not found at following path. \n{executable}.",
             )
             return {"CANCELLED"}
-            
 
         # Lines that need to be excuted before the modal operator can go below this comment.
 

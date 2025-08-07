@@ -15,15 +15,9 @@ https://github.com/NickTiny/blender-rhubarb-2d-lipsync/issues
 [Video Tutorial](https://www.youtube.com/embed/Anltf1_ufLQ "Rhubarb 2D Blender Tutorial by Tiny_Nick")
 
 # Installation
-Download a release from https://github.com/NickTiny/blender-rhubarb-2d-lipsync/releases. If you download or clone the repository, the Rhubarb Lip Sync executable and data files will be missing - they can be downloaded separately from the Rhubarb Lip Sync repository, and set up as described below under Usage.
+Download a release from https://github.com/NickTiny/blender-rhubarb-2d-lipsync/releases. 
 
-
-
-Use version `4.0.0` with `Blender 3.0+`.
-
-Do not unzip the file.
-
-In Blender, open Blender Preferences Edit -> Preferences select Add-ons and choose Install.... In the file dialog, select the .zip file. Once installed, enable the add-on with the checkbox.
+Drag the .zip file for your operating system directly into Blender to install it.
 
 # Usage: 
 
