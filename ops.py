@@ -40,13 +40,17 @@ class RHUBARB_OT_Execute_Rhubarb_Lipsync(bpy.types.Operator):
         prop_name = rhubarb.presets
         if rhubarb.obj_modes != "timeoffset":
             target["{0}".format(prop_name)] = set_pose
-            self.set_keyframe(target, rhubarb, frame_num - self.hold_frame_threshold)
+            self.set_keyframe(
+                obj, target, rhubarb, frame_num - self.hold_frame_threshold
+            )
         else:
             set_pose = target[f"{prop_name}"].offset = set_pose
-            self.set_keyframe(target, rhubarb, frame_num - self.hold_frame_threshold)
-        obj.animation_data.action.fcurves[-1].keyframe_points[
-            -1
-        ].interpolation = "CONSTANT"
+            self.set_keyframe(
+                obj, target, rhubarb, frame_num - self.hold_frame_threshold
+            )
+        # obj.animation_data.action.fcurves[-1].keyframe_points[
+        #     -1
+        # ].interpolation = "CONSTANT"
 
     def modal(self, context, event):
         wm = context.window_manager
@@ -139,18 +143,33 @@ class RHUBARB_OT_Execute_Rhubarb_Lipsync(bpy.types.Operator):
             wm.progress_end()
             return {"CANCELLED"}
 
-    def set_keyframe(self, target, rhubarb, frame):
+    def set_keyframe(self, obj, target, rhubarb, frame):
         data_path = rhubarb.presets
-        key_name = f'["{data_path}"]'
-        if rhubarb.obj_modes == "timeoffset":
+        if rhubarb.obj_modes == "bone":
+            key_name = f'pose.bones["{target.name}"]["{data_path}"]'
+            key_target = obj
+        elif rhubarb.obj_modes == "timeoffset":
             key_name = "offset"
-            target = target.get(data_path)
+            key_target = target.get(data_path)
+        else:
+            key_name = f'["{data_path}"]'
+            key_target = target
 
         # Keyframe target
-        target.keyframe_insert(
+        key_target.keyframe_insert(
             data_path=key_name,
             frame=frame,
         )
+
+        if key_target.animation_data and key_target.animation_data.action:
+            action = key_target.animation_data.action
+            fcurve = action.fcurve_ensure_for_datablock(
+                key_target,
+                key_name,
+                index=0,
+            )
+            if fcurve.keyframe_points:
+                fcurve.keyframe_points[-1].interpolation = "CONSTANT"
 
     def invoke(self, context, event):
         preferences = context.preferences
